@@ -1,0 +1,19 @@
+### 파일 없이 파일 업로드 테스트
+POST http://localhost:3000/file-upload
+Content-Type: multipart/form-data; boundary=test-file-upload
+
+--test-file-upload
+Content-Disposition: form-data; name="file"; filename="test.txt"
+
+이게 텍스트 파일의 내용입니다.
+--test-file-upload--
+
+### 실제 파일로 테스트
+POST http://localhost:3000/file-upload
+Content-Type: multipart/form-data; boundary=test-file-upload
+
+--test-file-upload
+Content-Disposition: form-data; name="file"; filename="upload-test.txt"
+
+< test.txt
+--test-file-upload--
