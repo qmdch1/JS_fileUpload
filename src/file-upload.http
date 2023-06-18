@@ -13,7 +13,19 @@ POST http://localhost:3000/file-upload
 Content-Type: multipart/form-data; boundary=test-file-upload
 
 --test-file-upload
-Content-Disposition: form-data; name="file"; filename="upload-test.txt"
+Content-Disposition: form-data; name="file"; filename="upload-test_gogo.txt"
 
-< test.txt
+< upload-test.txt
 --test-file-upload--
+
+
+### 사진 업로드
+POST http://localhost:3000/file-upload
+Content-Type: multipart/form-data; boundary=image-file-upload
+
+--image-file-upload
+Content-Disposition: form-data; name="file"; filename="black_gogo.png"
+Content-Type: image/png
+
+< black.png
+--image-file-upload--
